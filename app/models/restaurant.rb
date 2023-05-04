@@ -28,4 +28,8 @@ class Restaurant < ApplicationRecord
   def today_reservations_count
     reservations.where("booking_date = ?", Date.today).count
   end
+
+  def self.reservations_per_date_count(date)
+    Reservation.where("booking_date = ?", date).count
+  end
 end

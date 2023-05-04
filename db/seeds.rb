@@ -7,19 +7,25 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-for i in 1..14
-  res = Restaurant.create!(
+for i in 1..2
+  Restaurant.create!(
     name: "Restaurant #{i}",
     description: "Description for restaurant #{i}",
     address: "#Adress",
     city: "Bogota DC."
   )
+end
 
-  for j in 1..14
-    res.reservations.create!(
-      booking_date: Date.today
-    )
-  end
+for j in 1..10
+  Restaurant.first.reservations.create!(
+    booking_date: Date.today
+  )
+end
+
+for j in 1..9
+  Restaurant.second.reservations.create!(
+    booking_date: Date.today
+  )
 end
 
 puts "Restaurants and reservations has been created."
