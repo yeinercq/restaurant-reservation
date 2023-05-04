@@ -1,0 +1,4 @@
+<%= turbo_stream.prepend "restaurants" do %>
+  <%= render "restaurants/restaurant", restaurant: @restaurant %>
+<% end %>
+<%= turbo_stream.prepend "flash", partial: "layouts/flash" %>

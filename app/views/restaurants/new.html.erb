@@ -5,5 +5,9 @@
   <div class="row">
     <h1>New restaurant</h1>
   </div>
-  <%= render "form", restaurant: @restaurant %>
+  <%= turbo_frame_tag "remote_modal" do %>
+    <%= render "layouts/modal_content", title: "New restaurant" do %>
+      <%= render "form", restaurant: @restaurant %>
+    <% end %>
+  <% end %>
 </div>

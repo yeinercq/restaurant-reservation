@@ -23,7 +23,7 @@
         <%= button_to restaurant_path(restaurant), method: :delete, class: "btn btn-light" do %>
           <i class="bi bi-trash"></i>
         <% end %>
-        <%= link_to edit_restaurant_path(restaurant), class: "btn btn-light" do %>
+        <%= link_to edit_restaurant_path(restaurant), data: { turbo_frame: "remote_modal" }, class: "btn btn-light" do %>
           <i class="bi bi-pencil-square"></i>
         <% end %>
       </div>
