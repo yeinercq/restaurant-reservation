@@ -12,6 +12,7 @@
   <!-- Restaurants index -->
   <section>
     <%= turbo_frame_tag "restaurants", class: "row row-cols-1 row-cols-sm-2 row-cols-md-3" do %>
+      <%= render "empty_state" %>
       <%= render @restaurants %>
     <% end %>
   </section>

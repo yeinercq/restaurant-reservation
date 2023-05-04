@@ -21,6 +21,7 @@
     </div>
     <div class="row">
       <%= turbo_frame_tag "reservations" do %>
+        <%= render "reservations/empty_state" %>
         <%= render @reservations %>
       <% end %>
     </div>

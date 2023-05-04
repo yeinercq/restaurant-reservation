@@ -1,0 +1,6 @@
+<div class="empty-state empty-state--only-child mt-2">
+  <p class="empty-state__text">
+    There are not restaurants yet!
+  </p>
+  <%= link_to "Add restaurant", new_restaurant_path, data: { turbo_frame: "remote_modal" }, class: "btn btn-primary" %>
+</div>

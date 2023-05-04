@@ -1,0 +1,6 @@
+<div class="empty-state empty-state--only-child mt-2">
+  <p class="empty-state__text">
+    There are not reservations yet!
+  </p>
+  <%= link_to "Add reservation", new_restaurant_reservation_path(@restaurant), data: { turbo_frame: "remote_modal" }, class: "btn btn-primary" %>
+</div>

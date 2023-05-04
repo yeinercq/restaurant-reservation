@@ -1,0 +1,19 @@
+.empty-state {
+  padding: 3rem;
+  border: 3px;
+  border-style: dashed;
+  text-align: center;
+
+  &__text {
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+  }
+
+  &--only-child {
+    display: none;
+
+    &:only-child {
+      display: revert;
+    }
+  }
+}
