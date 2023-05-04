@@ -1,8 +1,11 @@
 <div class="container">
+
+
   <!-- Header -->
   <div class="row align-items-center my-4">
+    <%= link_to sanitize("&larr; Back to restaurants"), restaurants_path %>
     <div class="col">
-      <h1><%= @restaurant.name %></h1>
+      <h1>Reservations to <%= @restaurant.name %></h1>
     </div>
     <div class="col-auto">
       <%= link_to "New reservation", new_restaurant_reservation_path(@restaurant), class: "btn btn-primary" %>
@@ -11,6 +14,13 @@
 
   <!-- Restaurants reservations -->
   <section>
-    <%= render @reservations %>
+    <div class="row d-flex border rounded text-bg-success py-1">
+      <div class="col">Id</div>
+      <div class="col">Date</div>
+      <div class="col-12 col-md-2 d-flex gap-2 justify-content-end">Actions</div>
+    </div>
+    <div class="row">
+      <%= render @reservations %>
+    </div>
   </section>
 </div>

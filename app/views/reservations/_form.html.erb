@@ -1,0 +1,10 @@
+<%= simple_form_for [restaurant, reservation] do |f| %>
+  <% if reservation.errors.any? %>
+    <div class="alert alert-warning">
+      <%= reservation.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+  <label>Reservation's date*</label>
+  <%= f.date_field :booking_date, class: "form-control" %>
+  <%= f.submit class: "btn btn-success mt-2" %>
+<% end %>
