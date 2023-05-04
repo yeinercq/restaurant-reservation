@@ -12,5 +12,7 @@
 #
 class Restaurant < ApplicationRecord
   validates :name, :description, :address, :city, presence: true
-   validates :name, uniqueness: { case_sensitive: false }
+  validates :name, uniqueness: { case_sensitive: false }
+
+  scope :ordered, -> {order(id: :desc)}
 end

@@ -1,0 +1,28 @@
+<div class="col mb-2">
+  <div class="card shadow" style="width: 18rem;">
+    <div class="card-body">
+      <h4 class="card-title"><%= restaurant.name %></h4>
+      <p class="card-text"><%= restaurant.description %></p>
+      <table class="table table-borderless ">
+        <tbody>
+          <tr>
+            <td>City: </td>
+            <td><%= restaurant.city %></td>
+          </tr>
+          <tr>
+            <td>Address: </td>
+            <td><%= restaurant.address %></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex gap-2 justify-content-center">
+        <%= button_to restaurant_path(restaurant), method: :delete, class: "btn btn-light" do %>
+          <i class="bi bi-trash"></i>
+        <% end %>
+        <%= link_to edit_restaurant_path(restaurant), class: "btn btn-light" do %>
+          <i class="bi bi-pencil-square"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

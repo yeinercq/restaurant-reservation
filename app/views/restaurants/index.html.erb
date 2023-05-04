@@ -1,0 +1,16 @@
+<div class="container">
+  <!-- Header -->
+  <div class="row align-items-center mt-4 mb-4">
+    <div class="col">
+      <h1>Restaurants</h1>
+    </div>
+    <div class="col-auto">
+      <%= link_to "New restaurant", new_restaurant_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+
+  <!-- Restaurants index -->
+  <section class="row">
+    <%= render @restaurants %>
+  </div>
+</div>
