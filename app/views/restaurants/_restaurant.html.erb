@@ -1,6 +1,10 @@
 <div class="col mb-2">
   <div class="card shadow">
     <div class="card-body">
+      <div class="d-flex justify-content-center">
+        <%= image_tag(restaurant.photo_url, class: "img-fluid rounded-circle img-thumbnail shadow-sm") if restaurant.photo? %>
+      </div>
+
       <h4 class="card-title"><%= restaurant.name %></h4>
       <p class="card-text"><%= restaurant.description %></p>
       <table class="table table-borderless ">

@@ -15,4 +15,6 @@ class Restaurant < ApplicationRecord
   validates :name, uniqueness: { case_sensitive: false }
 
   scope :ordered, -> {order(id: :desc)}
+
+  mount_uploader :photo, PhotoUploader
 end

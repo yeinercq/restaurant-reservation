@@ -9,6 +9,10 @@
   <%= f.input :description %>
   <%= f.input :city %>
   <%= f.input :address %>
-  
-  <%= f.submit class: "btn btn-success" %>
+
+  <label>Photo</label>
+  <%= image_tag(restaurant.photo_url, class: "img-fluid rounded-circle mb-3 img-thumbnail shadow-sm") if restaurant.photo? %>
+  <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png', class: 'form-control' %>
+
+  <%= f.submit class: "btn btn-success mt-2" %>
 <% end %>
