@@ -1,0 +1,14 @@
+<%= simple_form_for restaurant do |f| %>
+  <% if restaurant.errors.any? %>
+    <div class="alert alert-warning">
+      <%= restaurant.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <%= f.input :name, input_html: { autofocus: true } %>
+  <%= f.input :description %>
+  <%= f.input :city %>
+  <%= f.input :address %>
+  
+  <%= f.submit class: "btn btn-success" %>
+<% end %>
