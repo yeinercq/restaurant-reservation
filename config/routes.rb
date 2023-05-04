@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :restaurants
+  resources :restaurants do
+    resources :reservations, except: [:show, :index]
+  end
 end

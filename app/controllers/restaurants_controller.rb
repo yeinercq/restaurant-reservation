@@ -6,6 +6,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @reservations = @restaurant.reservations.ordered
   end
 
   def new

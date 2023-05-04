@@ -9,12 +9,15 @@
 #  city        :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  photo       :string
 #
 class Restaurant < ApplicationRecord
   validates :name, :description, :address, :city, presence: true
   validates :name, uniqueness: { case_sensitive: false }
 
   scope :ordered, -> {order(id: :desc)}
+
+  has_many :reservations, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
 end

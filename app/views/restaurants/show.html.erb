@@ -1,0 +1,16 @@
+<div class="container">
+  <!-- Header -->
+  <div class="row align-items-center my-4">
+    <div class="col">
+      <h1><%= @restaurant.name %></h1>
+    </div>
+    <div class="col-auto">
+      <%= link_to "New reservation", new_restaurant_reservation_path(@restaurant), class: "btn btn-primary" %>
+    </div>
+  </div>
+
+  <!-- Restaurants reservations -->
+  <section>
+    <%= render @reservations %>
+  </section>
+</div>
