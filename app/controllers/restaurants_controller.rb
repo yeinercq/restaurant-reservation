@@ -29,7 +29,10 @@ class RestaurantsController < ApplicationController
 
   def update
     if @restaurant.update(restaurant_params)
-      redirect_to restaurants_path, notice: "Restaurant successfuly updated."
+      respond_to do |format|
+        format.html { redirect_to restaurants_path, notice: "Restaurant successfuly updated." }
+        format.turbo_stream { flash.now[:notice] = "Restaurant successfuly updated." }
+      end
     else
       render :edit, status: :unprocessable_entity
     end
