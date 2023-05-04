@@ -20,4 +20,12 @@ class Restaurant < ApplicationRecord
   has_many :reservations, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
+
+  def current_reservations_count(date)
+    reservations.where("booking_date = ?", date).count
+  end
+
+  def today_reservations_count
+    reservations.where("booking_date = ?", Date.today).count
+  end
 end

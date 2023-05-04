@@ -12,6 +12,7 @@ class Reservation < ApplicationRecord
   belongs_to :restaurant
 
   validates :booking_date, presence: true
+  validates_with Reservations::ValidatesMaxCount
 
   scope :ordered, -> {order(booking_date: :desc)}
 end
