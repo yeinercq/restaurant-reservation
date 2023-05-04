@@ -40,7 +40,10 @@ class RestaurantsController < ApplicationController
 
   def destroy
     if @restaurant.destroy
-      redirect_to restaurants_path, notice: "Restaurant successfuly destroyed."
+      respond_to do |format|
+        format.html { redirect_to restaurants_path, notice: "Restaurant successfuly destroyed." }
+        format.turbo_stream { flash.now[:notice] = "Restaurant successfuly destroyed." }
+      end
     end
   end
 

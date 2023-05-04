@@ -2,7 +2,7 @@
   <div class="col mb-2">
     <div class="card shadow">
       <div class="card-body">
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center mb-4">
           <%= image_tag(restaurant.photo_url, class: "img-fluid rounded-circle img-thumbnail shadow-sm") if restaurant.photo? %>
         </div>
 
@@ -21,7 +21,7 @@
           </tbody>
         </table>
         <div class="d-flex gap-2 justify-content-center">
-          <%= button_to restaurant_path(restaurant), method: :delete, class: "btn btn-light" do %>
+          <%= button_to restaurant_path(restaurant), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-light" do %>
           <i class="bi bi-trash"></i>
           <% end %>
           <%= link_to edit_restaurant_path(restaurant), data: { turbo_frame: "remote_modal" }, class: "btn btn-light" do %>
