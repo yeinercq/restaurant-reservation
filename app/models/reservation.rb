@@ -13,5 +13,5 @@ class Reservation < ApplicationRecord
 
   validates :booking_date, presence: true
 
-  scope :ordered, -> {order(id: :desc)}
+  scope :ordered, -> {order(booking_date: :desc)}
 end

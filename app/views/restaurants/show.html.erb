@@ -8,7 +8,7 @@
       <h1>Reservations to <%= @restaurant.name %></h1>
     </div>
     <div class="col-auto">
-      <%= link_to "New reservation", new_restaurant_reservation_path(@restaurant), class: "btn btn-primary" %>
+      <%= link_to "New reservation", new_restaurant_reservation_path(@restaurant), data: { turbo_frame: "remote_modal" }, class: "btn btn-primary" %>
     </div>
   </div>
 
@@ -20,7 +20,9 @@
       <div class="col-12 col-md-2 d-flex gap-2 justify-content-end">Actions</div>
     </div>
     <div class="row">
-      <%= render @reservations %>
+      <%= turbo_frame_tag "reservations" do %>
+        <%= render @reservations %>
+      <% end %>
     </div>
   </section>
 </div>

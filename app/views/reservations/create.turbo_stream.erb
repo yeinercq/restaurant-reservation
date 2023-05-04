@@ -1,0 +1,4 @@
+<%= turbo_stream.prepend "reservations" do %>
+  <%= render "reservations/reservation", reservation: @reservation %>
+<% end %>
+<%= turbo_stream.prepend "flash", partial: "layouts/flash" %>

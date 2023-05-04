@@ -9,7 +9,10 @@ class ReservationsController < ApplicationController
   def create
     @reservation = @restaurant.reservations.build(reservation_params)
     if @reservation.save
-      redirect_to restaurant_path(@restaurant), notice: "Reservation successfuly created."
+      respond_to do |format|
+        format.html { redirect_to restaurant_path(@restaurant), notice: "Reservation successfuly created." }
+        format.turbo_stream { flash.now[:notice] = "Reservation successfuly created." }
+      end
     else
       render :new, status: :unprocessable_entity
     end
