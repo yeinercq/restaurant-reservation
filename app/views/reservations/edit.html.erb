@@ -6,5 +6,9 @@
     <h1>Edit reservation</h1>
   </div>
 
-  <%= render "form", restaurant: @restaurant, reservation: @reservation %>
+  <%= turbo_frame_tag "remote_modal" do %>
+    <%= render "layouts/modal_content", title: "Edit reservation" do %>
+      <%= render "form", restaurant: @restaurant, reservation: @reservation %>
+    <% end %>
+  <% end %>
 </div>

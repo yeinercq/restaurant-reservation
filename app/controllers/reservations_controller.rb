@@ -23,7 +23,10 @@ class ReservationsController < ApplicationController
 
   def update
     if @reservation.update(reservation_params)
-      redirect_to restaurant_path(@restaurant), notice: "Reservation successfuly edited."
+      respond_to do |format|
+        format.html { redirect_to restaurant_path(@restaurant), notice: "Reservation successfuly edited." }
+        format.turbo_stream { flash.now[:notice] = "Reservation successfuly edited." }
+      end
     else
       render :edit, status: :unprocessable_entity
     end
@@ -31,7 +34,10 @@ class ReservationsController < ApplicationController
 
   def destroy
     if @reservation.destroy
-      redirect_to restaurant_path(@restaurant), notice: "Reservation successfuly destroyed."
+      respond_to do |format|
+        format.html { redirect_to restaurant_path(@restaurant), notice: "Reservation successfuly destroyed." }
+        format.turbo_stream { flash.now[:notice] = "Reservation successfuly destroyed." }
+      end
     end
   end
 
