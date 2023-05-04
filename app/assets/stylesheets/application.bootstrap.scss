@@ -1,2 +1,9 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+// Configuration
+@import "config/animations";
+
+// Components
+
+@import "components/flash_message";
