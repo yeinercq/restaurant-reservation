@@ -1,0 +1,37 @@
+*** RESTAURANTS ***
+
+** Index restaurants **
+
+curl http://localhost:3000/api/restaurants/
+
+** Show restaurant **
+
+curl http://localhost:3000/api/restaurants/:id
+
+** Create restaurant **
+
+curl -v -X POST http://localhost:3000/api/restaurants/\
+   -H 'Content-Type: application/json'\
+   -d '{"restaurant":{"name":"Test","description":"test","city":"test","address":"adress"}}'
+
+** Destroy restaurant **
+
+curl -v -X DELETE http://localhost:3000/api/restaurants/:id
+
+**  Update restaurant **
+
+curl -v -X PATCH http://localhost:3000/api/restaurants/:id\
+   -H 'Content-Type: application/json'\
+   -d '{"restaurant":{"name":"Test 2","description":"test","city":"test","address":"adress"}}'
+
+
+*** RESERVATIONS **
+
+** Create restaurant reservation **
+
+curl -v -X POST http://localhost:3000/api/restaurants/:id/reservations\
+   -H 'Content-Type: application/json'\
+   -d '{"reservation":{"booking_date":"2023-05-05"}}'
+   
+** Index restaurant reservations **
+curl http://localhost:3000/api/restaurants/:id/reservations
