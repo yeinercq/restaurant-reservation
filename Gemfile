@@ -61,6 +61,10 @@ group :development, :test do
   gem "pry-doc"
 end
 
+group :production do
+  gem "fog-aws"
+end
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
